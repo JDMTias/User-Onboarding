@@ -41,7 +41,7 @@ export default function MemberForm (props) {
                     name="tos"
                     type="checkbox"
                     // onChange={}
-                    // checked=''
+                    // checked=
                 />
                 </label>
                 <button type='submit'>Login</button>
