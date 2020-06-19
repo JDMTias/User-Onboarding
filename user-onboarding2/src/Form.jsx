@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 
 export default function MemberForm (props) {
-    // deconstruct props so you can have access to them here, theser are the purple words in memberform that you pass in.
-    const {values, onSubmitHandler, onInputChange, data} = props;
+    // deconstruct props so you can have access to them here, these are the purple words in memberform that you pass in.
+    const {value, onSubmitHandler, onInputChange, data, errorMessage, disabled,onCheckboxChange} = props;
     return (
         // 1 and 1a
         <form onSubmit={onSubmitHandler}>
             <div>
-                <h2>Add User</h2>
+                <h2>User Sign up</h2>
             </div>
                 <label>Name: </label>
                 <input
@@ -18,6 +18,8 @@ export default function MemberForm (props) {
                     // value=''
                     onChange={onInputChange}
                 />
+                {/* 2g */}
+                <div>{errorMessage.personName}</div>
                 <label>Email: </label>
                 <input
                     type="text"
@@ -27,6 +29,8 @@ export default function MemberForm (props) {
                     // value=''
                     onChange={onInputChange}
                 />
+                  {/* 2g */}
+                  <div>{errorMessage.email}</div>
                 <label>Password: </label>
                 <input
                     type="text"
@@ -36,17 +40,21 @@ export default function MemberForm (props) {
                     // value=''
                     onChange={onInputChange}
                 />
+                  {/* 2g */}
+                  <div>{errorMessage.password}</div>
                 <label>Terms of Service
                 <input 
                     name="tos"
                     type="checkbox"
-                    // onChange={}
-                    // checked=
+                    onChange={onCheckboxChange}
+                    checked={value.tos}
                 />
                 </label>
-                <button type='submit'>Login</button>
+                  {/* 2g */}
+                  <div>{errorMessage.checkbox}</div>
+                <button disabled={disabled}type='submit'>Login</button>
                 {/* This is just putting the data response onto the screen to make sure that it is working */}
-                <pre>{JSON.stringify(data)}</pre>
+                {/* <pre>{JSON.stringify(data)}</pre> */}
         </form>
     )
 }

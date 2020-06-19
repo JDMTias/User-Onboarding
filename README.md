@@ -30,7 +30,7 @@ your form will want to have an onsubmit so the whole thing can be used as an onS
 
 <!-- 1c need to make the onsubmit function and onchange handler you set formvalues to an object {} and inside that object is a key which is a variable [] and the name of the key is the input field [event.target.name]: , the value is what they type in event.target.value, we want to put what saves in setFormValues into formValues so use spread.  -->
 
-<!-- 1d Onsubmit, this is what is going to put whatever they typed in into the server, using axios which is jumping into step 3 making a post request, this will require two parameters, the url and the data to be sent to the server which is formValues after writing prevent default and the post request we want to do the .then, in which we will create new state for the data being received from the server, data and setData which we want as an array so add [] to the new useState.Dont forget to add a catch this is also part of step 3 and part of 4 as well  -->
+<!-- 1d Onsubmit, this is what is going to put whatever they typed in into the server, using axios which is jumping into step 3 making a post request, this will require two parameters, the url and the data to be sent to the server which is formValues after writing prevent default and the post request we want to do the .then, in which we will create new state for the data being received from the server, data and setData which we want as an array so add [] to the new useState.Dont forget to add a catch this is also part of step 3 -->
 
 ## STEP 2 - Implement Form Validation and Error Messaging
 
@@ -48,8 +48,9 @@ Form validation is one of the facets of an application that makes it feel polish
 
 <!-- 2e set up state for our error messages with usestate with an object inside {},  -->
 
-<!--2f set up the .then and .catch. -->
+<!--2f set up the .then and .catch. NEED MORE NOTES HERE -->
 
+<!--2g give memberform errorMessage prop then add into form props, add error message divs to form with propname.inputname -->
 ## STEP 3 - Make a POST Request
 
 Being able to `POST` data is a key skill of any developer, no matter your skill level.

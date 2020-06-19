@@ -19,6 +19,7 @@ const formSchema = yup.object().shape({
           ),
     tos:yup
     .boolean()
+    .required('Check Required')
     .oneOf([true],'Must accept Terms of Service')
 })
 
